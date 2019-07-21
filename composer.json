@@ -1,0 +1,31 @@
+{
+    "name": "hermeslin/pholmes",
+    "description": "",
+    "authors": [
+        {
+            "name": "hermes",
+            "email": "mercury.iwork@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "brainmaestro/composer-git-hooks": "^2.7",
+        "friendsofphp/php-cs-fixer": "^2.15"
+    },
+    "scripts": {
+      "test": "echo 123",
+      "lint": "vendor/bin/php-cs-fixer fix --dry-run --verbose",
+      "lint:fix": "vendor/bin/php-cs-fixer fix --verbose",
+      "cghooks": "vendor/bin/cghooks",
+      "post-install-cmd": "vendor/bin/cghooks add --ignore-lock",
+      "post-update-cmd": "vendor/bin/cghooks update"
+    },
+    "extra": {
+      "hooks": {
+        "pre-commit": [
+          "echo committing as $(git config user.name)",
+          "composer lint"
+        ]
+      }
+    }
+}
