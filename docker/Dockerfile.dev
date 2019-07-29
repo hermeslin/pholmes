@@ -1,0 +1,20 @@
+## php extensions build layer
+FROM php:7.3-cli-alpine as builder
+RUN apk update
+RUN apk add autoconf build-base
+
+## pcov
+RUN pecl install pcov
+
+## developer env
+FROM php:7.3-cli-alpine
+
+RUN apk update
+RUN apk add git
+RUN apk add --no-cache ca-certificates
+
+## copy extensions
+COPY --from=builder /usr/local/lib/php/extensions/no-debug-non-zts-20180731 /usr/local/lib/php/extensions/no-debug-non-zts-20180731
+
+## enable
+RUN docker-php-ext-enable pcov

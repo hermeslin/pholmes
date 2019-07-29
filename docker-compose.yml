@@ -1,0 +1,12 @@
+version: "3"
+services:
+  ######################################
+  # pholmes developement environment
+  ######################################
+  pholmes-dev:
+    image: hermeslin/pholmes:dev
+    build:
+      context: ./docker
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./:/root/pholmes
