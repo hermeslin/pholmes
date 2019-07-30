@@ -27,8 +27,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Pholmes\\": "app",
-      "Pholmes\\Tests\\": "tests"
+      "Pholmes\\": "app/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Pholmes\\Tests\\": "tests/"
     }
   },
   "extra": {
