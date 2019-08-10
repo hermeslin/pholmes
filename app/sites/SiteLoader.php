@@ -3,7 +3,7 @@ namespace Pholmes\Sites;
 
 class SiteLoader
 {
-    public function all() :array
+    public function all(): array
     {
         return [
             'Medium' => \Pholmes\Sites\Medium::class,

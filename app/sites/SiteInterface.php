@@ -6,10 +6,10 @@ interface SiteInterface
     /**
      *
      */
-    public function url() :String;
+    public function url(): string;
 
     /**
      *
      */
-    public function userProfileUrl(String $username) :String;
+    public function userProfileUrl(string $username): string;
 }

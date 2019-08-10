@@ -6,7 +6,7 @@ class Medium implements SiteInterface
     /**
      *
      */
-    public function url() :string
+    public function url(): string
     {
         return 'https://medium.com/';
     }
@@ -14,7 +14,7 @@ class Medium implements SiteInterface
     /**
      *
      */
-    public function userProfileUrl(String $username) :string
+    public function userProfileUrl(string $username): string
     {
         $url = $this->url();
         return "{$url}@{$username}";

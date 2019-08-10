@@ -6,7 +6,7 @@ class Twitter implements SiteInterface
     /**
      *
      */
-    public function url() :string
+    public function url(): string
     {
         return 'https://www.twitter.com/';
     }
@@ -14,7 +14,7 @@ class Twitter implements SiteInterface
     /**
      *
      */
-    public function userProfileUrl(String $username) :string
+    public function userProfileUrl(string $username): string
     {
         $url = $this->url();
         return "{$url}{$username}";
