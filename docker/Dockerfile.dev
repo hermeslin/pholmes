@@ -18,3 +18,8 @@ COPY --from=builder /usr/local/lib/php/extensions/no-debug-non-zts-20180731 /usr
 
 ## enable
 RUN docker-php-ext-enable pcov
+
+## install composer
+COPY ./composer-install.sh /root/composer-install.sh
+RUN /root/composer-install.sh
+RUN rm /root/composer-install.sh
